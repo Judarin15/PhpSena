@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!-- Latest compiled Fontawesome-->
+	<script src="https://kit.fontawesome.com/e632f1f723.js" crossorigin="anonymous"></script>
+    <title>PHP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="text-center py-3"> Mi primer PHP </h1>
+    </div>
+
+    <div class="container-fluid bg-light">
+        <div class="container">
+            <ul class="nav nav-justified py-2 nav-pills">
+                <li class="nav-item">
+                    <a href="registro.html" class="nav-link">Registro</a>
+                </li>
+                <li class="nav-item">
+                    <a href="ingreso.html" class="nav-link">Ingreso</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="inventario.html" class="nav-link active">Inventario</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Salir</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+	<div class="container-fluid">
+		
+		<div class="container py-5">
+
+            <div class="d-flex justify-content-center text-center py-3">
+
+                <form class="p-5 bg-light" method="post">
+            
+                    <div class="form-group">
+                        <label for="producto">Nombre del producto:</label>
+            
+                        <div class="input-group">
+                            
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </div>
+            
+                            <input type="text" class="form-control" id="producto" name="registroNombre">
+            
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad:</label>
+            
+                        <div class="input-group">
+                            
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </div>
+            
+                            <input type="text" class="form-control" id="cantidad" name="registroCantidad">
+            
+                        </div>
+                        
+                    </div>
+            
+                    <div class="form-group">
+            
+                        <label for="precio">Precio</label>
+            
+                        <div class="input-group">
+                            
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </div>
+            
+                            <input type="text" class="form-control" id="precio" name="registroPrecio">
+                        
+                        </div>
+                        
+                    </div>
+            
+           
+                
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+            
+                </form>
+            
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
