@@ -12,7 +12,7 @@
                     <a href="index.php?modulo=contenido" class="nav-link active">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.php?modulo=inventario" class="nav-link">Inventario</a>
+                    <a href="index.php?modulo=producto" class="nav-link">Inventario</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Salir</a>
