@@ -15,8 +15,12 @@
                     <a href="index.php?modulo=producto" class="nav-link">Inventario</a>
                 </li>
                 <li class="nav-item">
+                    <a href="index.php?modulo=perfil" class="nav-link">Perfil</a>
+                </li>
+                <li class="nav-item">
                     <a href="#" class="nav-link">Salir</a>
                 </li>
+                
             </ul>
         </nav>        
     </div>

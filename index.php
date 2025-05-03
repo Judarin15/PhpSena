@@ -14,7 +14,9 @@
 require_once "controladores/plantilla.controlador.php";
 require_once "controladores/registro.controlador.php";
 require_once "controladores/producto.controlador.php";
+require_once "controladores/perfil.controlador.php";
 
+require_once "modelos/perfil.modelo.php";
 require_once "modelos/registro.modelo.php";
 require_once "modelos/producto.modelo.php";
 require_once "modelos/conexion.php";
