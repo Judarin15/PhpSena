@@ -26,4 +26,14 @@ class ControladorRegistro{
 
     }
 
+    static public function ctrIngresar(){
+
+        if(isset($_POST["ingresoCorreo"])){
+
+            $tabla = "personas";
+            $item = "pers_correo";
+            $valor = $_POST["ingresoCorreo"];
+        }
+    }
+
 }

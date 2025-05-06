@@ -16,7 +16,7 @@
                                 </span>
                             </div>
             
-                            <input type="text" class="form-control" id="nombre" name="registroNombre">
+                            <input type="text" class="form-control" id="nombre" name="ingresoCorreo">
             
                         </div>
                         
@@ -33,12 +33,20 @@
                                 </span>
                             </div>
             
-                            <input type="password" class="form-control" id="pwd" name="registroPassword">
+                            <input type="password" class="form-control" id="pwd" name="ingresoClave">
             
                         </div>
             
                     </div>
-            
+                    
+                    <?php
+
+                        $ingresar = new ControladorRegistro();
+                        $ingresar->ctrIngresar();
+                    ?>
+
+
+
                     <button type="submit" class="btn btn-primary mt-2">Ingresar</button>
                 </form>
 
