@@ -1,64 +1,65 @@
+<?php
+    session_start();
+
+    // Verificar si el usuario ha iniciado sesión
+    if (!isset($_SESSION["validarIngreso"]) || $_SESSION["validarIngreso"] !== "ok") {
+        header("Location: index.php?modulo=ingreso");
+        exit;
+    }
+
+    // Obtenemos todos los registros de la tabla "personas"
+    $registros = ControladorRegistro::ctrSeleccionarRegistro();
+?>
 <section class="container-fluid">
-        <div class="container py-5">
-            <table class="table table-striped">
-                <thead>
+    <div class="container py-5">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Email</th>
+                    <th>Contraseña</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php if (!empty($registros)): ?>
+                <?php foreach ($registros as $registro): ?>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Telefono</th>
-                        <th>Email</th>
-                        <th>Contraseña</th>
-                        <th>Botones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Elon Musk</td>
-                        <td>3156369875</td>
-                        <td>elonm@gmail.com</td>
-                        <td>123</td>
-                        <td> <button type="submit"
+                        <td><?= htmlspecialchars($registro['nombre'], ENT_QUOTES, 'UTF-8') ?></td>
+                        <td><?= htmlspecialchars($registro['telefono'], ENT_QUOTES, 'UTF-8') ?></td>
+                        <td><?= htmlspecialchars($registro['pers_correo'], ENT_QUOTES, 'UTF-8') ?></td>
+                        <td>****</td> <!-- Contraseña oculta -->
+                        <td>
+                            <div class="btn-group" role="group">
+                                <form method="post" action="procesarRegistro.php">
+                                    <input type="hidden" name="idRegistro" value="<?= htmlspecialchars($registro['id'], ENT_QUOTES, 'UTF-8') ?>">
+                                    <div class="px-1">
+                                        <a href="index.php?modulo=editar&id=<?= $registro['id'] ?>" class="btn btn-warning">
+                                            <i class="fas fa-pencil-alt"></i> Editar
+                                        </a>
+                                        <button
+                                            type="submit"
                                             name="delete"
                                             class="btn btn-danger"
                                             onclick="return confirm('¿Seguro que deseas eliminar este registro?');"
                                         >
-                                            <i class="fas fa-trash-alt"></i>
-                                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                                            <i class="fas fa-trash-alt"></i> Eliminar
                                         </button>
-                                    
-                                    </td> 
+                                    </div>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
-                    <tr>
-                        <td>Carlos</td>
-                        <td>3156369875</td>
-                        <td>carlosb@gmail.com</td>
-                        <td>123</td>
-                        <td> <button type="submit"
-                                            name="delete"
-                                            class="btn btn-danger"
-                                            onclick="return confirm('¿Seguro que deseas eliminar este registro?');"
-                                        >
-                                            <i class="fas fa-trash-alt"></i>
-                                            <button type="submit" class="btn btn-primary">Actualizar</button>
-                                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>Mark</td>
-                        <td>3156369875</td>
-                        <td>markz@gmail.com</td>
-                        <td>123</td>
-                        <td> <button type="submit"
-                                            name="delete"
-                                            class="btn btn-danger"
-                                            onclick="return confirm('¿Seguro que deseas eliminar este registro?');"
-                                        >
-                                            <i class="fas fa-trash-alt"></i>
-                                            <button type="submit" class="btn btn-primary">Actualizar</button>
-                                        </button></td>
-                        
-                    </tr>
-
-                </tbody>
-            </table>
-        </div>
-
+                <?php endforeach; ?>
+            <?php else: ?>
+                <tr>
+                    <td colspan="5" class="text-center">
+                        No hay registros para mostrar.
+                    </td>
+                </tr>
+            <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
 </section>
