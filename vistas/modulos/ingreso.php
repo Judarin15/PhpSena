@@ -19,7 +19,6 @@
                             <input type="text" class="form-control" id="nombre" name="ingresoCorreo">
             
                         </div>
-                        
                     </div>
 
                     <div class="form-group">
